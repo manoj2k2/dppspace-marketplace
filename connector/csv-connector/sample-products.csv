@@ -1,3 +1,13 @@
 ProductNumber|ProductName|ProductCategory|Description|Weight|Status|Brand|CountryOfManufacture|UpdatedAt
 DPP-SAMPLE-0001|Demo reusable water bottle|Drinkware|Fictional sample product for testing the CSV connector.|0.38|Draft|Example Materials GmbH|DE|2026-10-25T09:00:00Z
 DPP-SAMPLE-0002|Demo aluminum housing|Components|Fictional sample product for testing the CSV connector.|1.25|Draft|Example Materials GmbH|DE|2026-10-25T09:15:00Z
+DPP-SAMPLE-0003|Demo recycled-paper notebook|Stationery|Fictional sample product for testing the CSV connector.|0.42|Draft|Example Materials GmbH|DE|2026-10-26T09:00:00Z
+DPP-SAMPLE-0004|Demo stainless-steel lunch box|Food Storage|Fictional sample product for testing the CSV connector.|0.31|Draft|Example Materials GmbH|DE|2026-10-26T09:15:00Z
+DPP-SAMPLE-0005|Demo bamboo desk organizer|Office Accessories|Fictional sample product for testing the CSV connector.|0.68|Draft|Example Materials GmbH|DE|2026-10-26T09:30:00Z
+DPP-SAMPLE-0006|Demo cotton tote bag|Bags|Fictional sample product for testing the CSV connector.|0.19|Draft|Example Materials GmbH|DE|2026-10-26T09:45:00Z
+DPP-SAMPLE-0007|Demo recycled-plastic planter|Home and Garden|Fictional sample product for testing the CSV connector.|0.55|Draft|Example Materials GmbH|DE|2026-10-26T10:00:00Z
+DPP-SAMPLE-0008|Demo glass storage jar|Food Storage|Fictional sample product for testing the CSV connector.|0.73|Draft|Example Materials GmbH|DE|2026-10-26T10:15:00Z
+DPP-SAMPLE-0009|Demo cork yoga block|Sports and Fitness|Fictional sample product for testing the CSV connector.|0.36|Draft|Example Materials GmbH|DE|2026-10-26T10:30:00Z
+DPP-SAMPLE-0010|Demo aluminum travel mug|Drinkware|Fictional sample product for testing the CSV connector.|0.29|Draft|Example Materials GmbH|DE|2026-10-26T10:45:00Z
+DPP-SAMPLE-0011|Demo wool-blend scarf|Apparel|Fictional sample product for testing the CSV connector.|0.24|Draft|Example Materials GmbH|DE|2026-10-26T11:00:00Z
+DPP-SAMPLE-0012|Demo recycled-cardboard shipping box|Packaging|Fictional sample product for testing the CSV connector.|0.12|Draft|Example Materials GmbH|DE|2026-10-26T11:15:00Z
