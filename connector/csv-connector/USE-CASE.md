@@ -48,5 +48,8 @@ The connector imports the selected records, retains their source identity for la
 
 - The connector marketplace lists CSV / Excel as available (`csv-excel`, version `1.0.0`) and documents support for public HTTPS file URLs.
 - The connection wizard has four stages: connector, connection details, configuration, and review.
-- The wizard defaults the environment to Production. For a first import, select a non-production environment where available.
-- No existing connections were listed in the selected demo workspace during this review. No connection was created because a real source URL and source schema were not provided.
+- The wizard defaults the environment to Production. This use case uses Development, manual-only scheduling, and the sample file's pipe delimiter, `ProductNumber` record ID, and `UpdatedAt` watermark.
+- The published sample file responds over HTTPS. A `DPP sample products (CSV)` connection was created as a Draft in the selected demo workspace; no import has been run.
+- The local connector worker is enabled and running. Mapping/source-field discovery and connection testing returned HTTP 403 for the current account, so the connection remains a draft without a mapping.
+- The review step does not display the delimiter, record ID, or watermark configuration, although those settings are visible on the saved connection details.
+- The portal Document Library rejects `.md` uploads (`File type '.md' is not allowed`), so this use-case file is stored in the marketplace repository only.
