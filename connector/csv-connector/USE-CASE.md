@@ -15,13 +15,21 @@ Workspace administrator configuring a source connection.
 - A stable, non-empty source ID column is available to identify records across imports.
 - The workspace administrator knows the intended target entities and source-to-target field mappings.
 
+## Sample file
+
+[`sample-products.csv`](./sample-products.csv) contains fictional product rows for a safe development import. It uses a pipe delimiter, `ProductNumber` as the stable source ID, and `UpdatedAt` as the optional incremental-sync watermark. The published source is available at:
+
+<https://raw.githubusercontent.com/manoj2k2/dppspace-marketplace/main/connector/csv-connector/sample-products.csv>
+
+Map the sample fields to the workspace's product fields before importing. The sample intentionally contains no production company or supplier data.
+
 ## Main flow
 
 1. Open **Connector marketplace** and select **CSV / Excel** (`csv-excel`).
 2. Create a connection with a descriptive name, environment, and public HTTPS file URL.
 3. Choose the time zone and, if needed, a cron schedule. Leaving the schedule blank keeps runs manual.
 4. Select the entity types to import: Product, Material, BOM, Supplier, Document, Evidence, or Product Carbon Footprint.
-5. Configure the worksheet for Excel files, header-row handling, CSV delimiter, required stable record ID column, and optional modified timestamp column.
+5. Configure the worksheet for Excel files, header-row handling, CSV delimiter, required stable record ID column, and optional modified timestamp column. For the sample file, use a pipe (`|`) delimiter, `ProductNumber`, and `UpdatedAt`.
 6. Review and create the connection.
 7. Configure source-to-target mappings, run an initial import, and inspect execution results for validation errors.
 
