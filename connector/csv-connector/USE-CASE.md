@@ -49,7 +49,9 @@ The connector imports the selected records, retains their source identity for la
 - The connector marketplace lists CSV / Excel as available (`csv-excel`, version `1.0.0`) and documents support for public HTTPS file URLs.
 - The connection wizard has four stages: connector, connection details, configuration, and review.
 - The wizard defaults the environment to Production. This use case uses Development, manual-only scheduling, and the sample file's pipe delimiter, `ProductNumber` record ID, and `UpdatedAt` watermark.
-- The published sample file responds over HTTPS. A `DPP sample products (CSV)` connection was created as a Draft in the selected demo workspace; no import has been run.
-- The local connector worker is enabled and running. Mapping/source-field discovery and connection testing returned HTTP 403 for the current account, so the connection remains a draft without a mapping.
+- The published sample file responds over HTTPS. `DPP sample products (CSV)` is configured in Development with manual-only scheduling, tested successfully, and activated.
+- The Product v1 mapping is published with seven fields. A manual DryRun succeeded for both sample rows with zero created, updated, or failed records; no live product import has been run.
+- Initial source-field discovery failed because the snapshot volume was root-owned while the API and worker run as UID 1654. The existing volume ownership was corrected, and both container images now create the snapshot directory with the application user's ownership.
+- The mapping form previously sent source paths for Direct mappings, which the API rejects. The UI payload was corrected, and mapping preview now displays the API's mapped-record response.
 - The review step does not display the delimiter, record ID, or watermark configuration, although those settings are visible on the saved connection details.
 - The portal Document Library rejects `.md` uploads (`File type '.md' is not allowed`), so this use-case file is stored in the marketplace repository only.
