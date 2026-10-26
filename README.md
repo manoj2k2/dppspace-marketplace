@@ -2,6 +2,10 @@
 
 DPPSpace Marketplace is a public home for discovering digital product passport (DPP) solutions, integrations, and services.
 
-## Project status
+## Connector resources
 
-This repository is being initialized. Product details, setup instructions, and contribution guidance will be added as the project develops.
+The repository contains connector setup guides, use cases, and safe sample data. Runtime adapter implementations are maintained in DPPSpace Connect and must be registered in both its API and worker; adding Marketplace files alone does not register an adapter.
+
+- [Connector adapter developer guide](./connector/DEVELOPER.md)
+- [CSV / Excel connector use case](./connector/csv-connector/USE-CASE.md)
+- [Fictional product CSV sample](./connector/csv-connector/sample-products.csv)
