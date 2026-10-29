@@ -23,6 +23,8 @@ Workspace administrator configuring a source connection.
 
 Map the sample fields to the workspace's product fields before importing. The sample intentionally contains no production company or supplier data.
 
+[`sample-material.csv`](./sample-material.csv) contains two fictional material rows for each unique `ProductNumber` in the product sample. Use `MaterialNumber` as its stable source ID and `ProductNumber` to cross-reference the source product. The [`Integration API OpenAPI specification`](https://portal.dppspace.com/swagger/integration-v1/swagger.json) defines material writes through `POST /api/materials` with `CreateMaterialMasterDto`; product-scoped connector imports require `ProductId` to contain the actual DPP product UUID. Populate that column after importing the products—`ProductNumber` is not a valid target UUID.
+
 ## Main flow
 
 1. Open **Connector marketplace** and select **CSV / Excel** (`csv-excel`).
