@@ -13,6 +13,10 @@ The public [DPPSpace website](https://dppspace.com/) now connects product discov
 - [Integrations catalog](https://dppspace.com/integrations/) presents available and planned factory-system connectors. Available options include SAP S/4HANA OData, Generic REST/JSON, and CSV/Excel imports; planned options are clearly marked as coming soon.
 - Public passport pages provide read-only product information and linked datasets. Demonstration content is illustrative and is not a compliance assessment, certification, or EU endorsement.
 
+## Industry rules
+
+- [Battery Passport Industry Pack — partner configuration guide](./industry-rules/battery-passport-industry-pack.md) helps ERP/PLM consultants, sustainability advisers, manufacturers’ associations, and supply-chain networks scope and configure a battery-specific passport workflow.
+
 ## Connector resources
 
 This repository contains connector setup guides, use cases, and safe sample data. Runtime adapter implementations are maintained in DPPSpace Connect and must be registered in both its API and worker; adding Marketplace files alone does not register an adapter.
