@@ -12,7 +12,7 @@ The public [DPPSpace website](https://dppspace.com/) now connects product discov
 
 - [Passport showcase](https://dppspace.com/showcase/) lets visitors inspect recent public demonstration passports, open their public pages, scan QR codes, and share links without creating an account.
 - [Platform overview](https://dppspace.com/platform/) explains the product record → materials and evidence → readiness review → published passport journey, with a public example to inspect.
-- [Integrations catalog](https://dppspace.com/integrations/) presents available and planned factory-system connectors. Available options include SAP S/4HANA OData, Generic REST/JSON, and CSV/Excel imports; planned options are clearly marked as coming soon.
+- [Integrations catalog](https://dppspace.com/integrations/) presents available and planned factory-system connectors. Available options include SAP S/4HANA OData, Generic REST/JSON, CSV/Excel imports, and AAS 3.0 Repository API, AASX, and JSON imports; planned options are clearly marked as coming soon.
 - Public passport pages provide read-only product information and linked datasets. Demonstration content is illustrative and is not a compliance assessment, certification, or EU endorsement.
 
 ## Industry rules
@@ -26,6 +26,8 @@ This repository contains connector setup guides, use cases, and safe sample data
 - [Connector adapter developer guide](./connector/DEVELOPER.md)
 - [CSV / Excel connector use case](./connector/csv-connector/USE-CASE.md)
 - [Fictional product CSV sample](./connector/csv-connector/sample-products.csv)
+- [Asset Administration Shell configuration guide](./connector/asset-administration-shell/CONFIGURATION.md)
+- [Fictional AASX sample](./connector/asset-administration-shell/data/sample-product.aasx)
 
 ---
 
