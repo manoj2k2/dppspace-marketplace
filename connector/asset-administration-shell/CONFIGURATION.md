@@ -2,6 +2,10 @@
 
 This guide uses the fictional AASX package in [`data/sample-product.aasx`](./data/sample-product.aasx) to create a Development connection in the Atlas DPP portal.
 
+## Learn about Atlas DPP AAS integration
+
+See the [Atlas DPP integrations catalog](https://dppspace.com/integrations/) for supported connection options. The [Asset Administration Shell integration guide](https://dppspace.com/blog/asset-administration-shell-aas-integration-atlas-dpp/) covers AAS 3.0 Repository API, AASX, and AAS JSON imports and their current limitations.
+
 ## Before you start
 
 - Sign in to the workspace that should own the connection.
@@ -40,3 +44,127 @@ Run a **DryRun** first and inspect the execution results. Keep the connection ma
 - The portal file-import mode requires a public HTTPS URL without embedded credentials, query strings, or fragments.
 
 The AAS Repository API mode is separate from this AASX example. API connections use bearer-token or API-key authentication; configure them only when the workspace has an approved way to provision the required tenant-scoped credential.
+
+
+No. An AASX file does not automatically contain all the information required for a Digital Product Passport (DPP).
+
+An AASX file is a package containing an Asset Administration Shell (AAS) and its submodels, files and related data. It can provide a substantial amount of structured product information, but whether it is sufficient depends on:
+
+1. Which product category the DPP is for (battery, electronics, textiles, etc.).
+2. Which regulatory requirements apply.
+3. Which submodels and data fields the manufacturer has actually populated.
+4. Whether the information is accurate, complete, current and accessible to the intended users.
+
+For DPPspace, I would treat AASX as a potential source of product data—not as a complete, automatically compliant DPP.
+
+## 1. Compare AASX content with battery DPP requirements
+
+For a battery passport, the EU Battery Regulation (EU) 2023/1542, particularly Annex XIII, defines the information categories. These include public, restricted and individual-battery information.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://eur-lex.europa.eu\&sz=32)
+
+EUR-Lex+1
+
+
+
+| Battery DPP information                                | Can AASX contain it?                       |
+| ------------------------------------------------------ | ------------------------------------------ |
+| Manufacturer, battery model and identification         | Yes                                        |
+| Battery chemistry and material composition             | Yes                                        |
+| Capacity, voltage and power                            | Yes                                        |
+| Battery lifetime and performance                       | Yes                                        |
+| Carbon footprint                                       | Yes, if modelled and populated             |
+| Recycled content and responsible sourcing              | Yes, if modelled and populated             |
+| EU Declaration of Conformity and supporting documents  | Yes, as document references or attachments |
+| Detailed composition of cathode, anode and electrolyte | Yes                                        |
+| Dismantling instructions and diagrams                  | Yes                                        |
+| Test reports                                           | Yes, as documents or structured data       |
+| Individual battery serial number and status            | Yes                                        |
+| State of health, charging cycles and usage history     | Yes, with dynamic data integration         |
+
+The important distinction is that AAS supports the representation of this information, but does not guarantee that it is present.
+
+## 2. What the AASX structure might look like
+
+An AASX battery package could contain submodels such as:
+
+Battery_AASX.aasx
+
+Asset Administration Shell
+
+Digital Nameplate
+
+Technical Data
+
+Battery Characteristics
+
+Material Composition
+
+Carbon Footprint
+
+Performance and Durability
+
+Battery Passport Metadata
+
+Documentation and Certificates
+
+Dismantling Information
+
+Battery Lifecycle / Usage Data
+
+Illustrative structure, not a mandatory list of IDTA submodels.
+
+You would need to select suitable IDTA submodel templates and define additional mappings where required. Not every item above necessarily has a standardised template that directly satisfies the relevant legal requirement.
+
+## 3. Important: EU requirements are evolving
+
+The European Commission's current Battery Passport FAQ clarifies that not every field is mandatory from February 2027. Some information applies only to certain battery categories or at later dates. For example, carbon footprint, recycled content and due diligence information have separate application dates.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://single-market-economy.ec.europa.eu\&sz=32)
+
+Internal Market SME+1
+
+
+
+Therefore, DPPspace needs a versioned regulatory validation model—not simply a fixed list of mandatory fields.
+
+## 4. My recommendation for DPPspace
+
+Build an AASX-to-DPP conversion and validation engine.
+
+AASX / AAS JSON Import
+
+Read submodels, semantic IDs, files and references
+
+Semantic Mapping Engine
+
+Map AAS properties to battery DPP data points
+
+Regulatory Validation Engine
+
+Check missing, invalid, conditional and restricted fields
+
+DPPspace Passport
+
+Generate structured DPP JSON, manage access and documents, publish passport
+
+The engine should produce three useful outputs:
+
+- Mapped: Information successfully extracted from AASX.
+- Missing: Required information not found in the AASX package.
+- Needs verification: Information found but requiring validation of its value, source or evidence.
+
+### 5. A commercial opportunity
+
+I would position this as a specific DPPspace feature:
+
+"Convert your existing AASX digital twin into a regulatory-ready Digital Product Passport."
+
+This gives DPPspace two possible customer entry points:
+
+- Companies already using AAS: import their existing asset information.
+- Companies without AAS: create passports directly using DPPspace's native data model.
+
+One important caveat: successful conversion and validation do not themselves certify legal compliance. The responsible economic operator remains accountable for the accuracy and completeness of the passport.
+
+My next recommendation: Build the AASX importer first, then test it against one real battery AASX package and the Commission's battery data-point guidance. That will reveal exactly which regulatory fields are covered and which need additional data sources.
